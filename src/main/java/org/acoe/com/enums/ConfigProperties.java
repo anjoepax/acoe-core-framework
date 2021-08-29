@@ -1,0 +1,12 @@
+package org.acoe.com.enums;
+
+public enum ConfigProperties {
+    URL,
+    BROWSER,
+    OVERRIDEREPORTS,
+    PASSEDSTEPSSCREENSHOTS,
+    FAILEDSTEPSSCREENSHOTS,
+    SKIPPEDSTEPSSCREENSHOTS,
+    USERNAME,
+    PASSWORD
+}
