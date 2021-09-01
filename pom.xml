@@ -110,6 +110,14 @@
 
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>a0wt8r3mqvmow-artifactory-primary-0-releases</name>
+            <url>https://cioqualityautomationartifact.jfrog.io/artifactory/acoe-core-libs-snapshot/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>

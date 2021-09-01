@@ -93,6 +93,12 @@ public class BasePage {
         js.executeScript(script);
     }
 
+    protected void executeJavascript(String script, By locator) {
+        JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+        WebElement element = DriverManager.getDriver().findElement(locator);
+        js.executeScript(script, element);
+    }
+
     private void selectDropDown(Consumer<Select> select, WebElement element) {
         select.accept(new Select(element));
     }
