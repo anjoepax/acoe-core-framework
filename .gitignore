@@ -2,3 +2,6 @@
 **/index.html
 **/.idea
 **/extent-report-output
+**/src/test/resources/.DS_Store
+javadoc
+**/**.DS_STORE
