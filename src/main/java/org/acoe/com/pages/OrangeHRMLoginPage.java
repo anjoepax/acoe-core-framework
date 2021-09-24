@@ -1,8 +1,14 @@
 package org.acoe.com.pages;
 
+import org.acoe.com.utils.DecodeUtils;
 import org.openqa.selenium.By;
 import org.acoe.com.enums.WaitStrategy;
 
+/**
+ * Practice page for practicing Page Object Model design in Framework
+ * @date September 23, 2021
+ * @author Anthony Joseph Manigos
+ */
 public final class OrangeHRMLoginPage extends BasePage {
 
     private final By txtBoxUsername = By.id("txtUsername");
@@ -16,7 +22,7 @@ public final class OrangeHRMLoginPage extends BasePage {
     }
 
     public OrangeHRMLoginPage enterPassword(String password) {
-        type(password, txtBoxPassword, WaitStrategy.CLICKABLE, "[Password Field]");
+        typePassword(DecodeUtils.getDecodedString(password), txtBoxPassword, WaitStrategy.CLICKABLE, "[Password Field]");
         return this;
     }
 

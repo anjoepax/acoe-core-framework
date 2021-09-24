@@ -3,10 +3,19 @@
 <suite name="Suite" data-provider-thread-count="3">
     <listeners>
         <listener class-name="org.acoe.com.listener.ListenerClass"/>
+        <listener class-name="org.acoe.com.listener.MethodInterceptor"/>
+        <listener class-name="org.acoe.com.listener.AnnotationTransformer"/>
     </listeners>
-    <test thread-count="1" parallel="methods" name="Test">
+    <test thread-count="1" parallel="methods" name="Chrome Testing">
         <classes>
             <class name="org.acoe.com.test.OrangeHRMTests"/>
         </classes>
     </test>
+
+    <!--<test thread-count="1" parallel="methods" name="Edge Testing">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="org.acoe.com.test.OrangeHRMTests"/>
+        </classes>
+    </test>-->
 </suite>

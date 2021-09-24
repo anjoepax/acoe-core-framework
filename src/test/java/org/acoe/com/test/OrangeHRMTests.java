@@ -1,10 +1,12 @@
 package org.acoe.com.test;
 
+import org.acoe.com.annotations.FrameworkAnnotations;
+import org.acoe.com.enums.CategoryType;
 import org.assertj.core.api.Assertions;
 import org.acoe.com.pages.OrangeHRMLoginPage;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import java.util.Map;
 
 public final class OrangeHRMTests extends BaseTest {
 
@@ -17,21 +19,26 @@ public final class OrangeHRMTests extends BaseTest {
         loginPage = new OrangeHRMLoginPage();
     }
 
-    @Test(dataProvider = "LoginTestData")
-    public void loginLogoutTest(String username, String password) {
-        loginPage.enterUsername(username)
-                .enterPassword(password)
+
+    @FrameworkAnnotations(author = {"Anthony", "Joseph"}, category = {CategoryType.SMOKE, CategoryType.SANITY})
+    @Test
+    public void loginLogoutTest(Map<String, String> data) {
+        loginPage.enterUsername(data.get("username"))
+                .enterPassword(data.get("password"))
                 .clickLogin()
                 .logout();
         Assertions.assertThat(loginPage.getPageTitle()).isEqualTo("OrangeHRM");
     }
 
-    @DataProvider(name = "LoginTestData", parallel = true)
-    public Object[][] getData() {
-        return new Object[][]{
-                {"Admin", "admin123"},
-                {"Admin", "admin123"},
-        };
+
+    @FrameworkAnnotations(author = {"Amuthan"}, category = {CategoryType.REGRESSION})
+    @Test
+    public void newTest(Map<String, String> data) {
+        loginPage.enterUsername(data.get("username"))
+                .enterPassword(data.get("password"))
+                .clickLogin()
+                .logout();
+        Assertions.assertThat(loginPage.getPageTitle()).isEqualTo("OrangeHRM");
     }
 }
 
